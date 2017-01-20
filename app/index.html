@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="stockDogApp" ng-controller="MainCtrl">
+  <body ng-app="stockDogApp" ng-controller="MainCtrl as vm">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -24,7 +24,7 @@
     <!-- Add your site or application content here -->
     <div class="header">
       <div class="navbar navbar-default" role="navigation" ng-cloak>
-        <div class="container">
+        <div class="container-fluid">
           <div class="navbar-header">
 
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
@@ -39,15 +39,15 @@
 
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
 
-            <ul class="nav navbar-nav">
-              <li ng-class="{active: activeView==='dashboard'}"><a href="#/">Dashboard</a></li>
-              <li ng-class="{active: activeView==='watchlist'}">
+            <ul class="nav navbar-nav navbar-right">
+              <li ui-sref-active="active"><a ui-sref="watch.dashboard">Dashboard</a></li>
+              <li ui-sref-active="active">
                 <a class="dropdown-toggle" data-toggle="dropdown" role="button">Watchlist<b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                    <li ng-if="!watchlists.length" class="dropdown-header">
+                    <li ng-if="!vm.watchlists.length" class="dropdown-header">
                       No list found
                     </li>
-                    <li ng-repeat="list in watchlists track by $index">
+                    <li ng-repeat="list in vm.watchlists track by $index">
                       <a ui-sref="watch.watchlist({listId:list.id})">{{list.name}}</a>
                     </li>
                 </ul>
@@ -59,8 +59,8 @@
       </div>
     </div>
 
-    <div class="container">
-    <div ui-view=""></div>
+    <div class="container-fluid">
+    <div ui-view></div>
     </div>
 
     <div class="footer">
@@ -106,6 +106,16 @@
         <script src="scripts/directives/stk-watchlist-panel.js"></script>
         <script src="scripts/controllers/dashboard.js"></script>
         <script src="scripts/controllers/watchlist.js"></script>
+        <script src="scripts/services/company-service.js"></script>
+        <script src="scripts/controllers/message.js"></script>
+        <script src="scripts/controllers/childe.js"></script>
+        <script src="scripts/services/user-service.js"></script>
+        <script src="scripts/directives/stk-parent.js"></script>
+        <script src="scripts/directives/stk-child.js"></script>
+        <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/services/user.js"></script>
+        <script src="scripts/controllers/vm.js"></script>
+        <script src="scripts/controllers/vmchild.js"></script>
         <!-- endbuild -->
         <script src="scripts/router.js"></script>
 </body>

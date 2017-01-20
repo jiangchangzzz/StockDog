@@ -8,10 +8,7 @@
  * Controller of the stockDogApp
  */
 angular.module('stockDogApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('MainCtrl', function (WatchlistService) {
+    var vm=this;
+    vm.watchlists=WatchlistService.query();
   });

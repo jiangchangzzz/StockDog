@@ -10,7 +10,7 @@ angular.module('stockDogApp').config(function($stateProvider,$urlRouterProvider)
         }
     );
 
-    $urlRouterProvider.otherwise('/watch/dashboard');
+    $urlRouterProvider.otherwise('/test/message');
 
     $stateProvider.state(
         'watch',
@@ -38,4 +38,48 @@ angular.module('stockDogApp').config(function($stateProvider,$urlRouterProvider)
             controller: 'WatchlistCtrl as vm'
         }
     );
+
+    $stateProvider.state(
+        'test',
+        {
+            url: '/test',
+            template: '<div ui-view></div>',
+            abstract: true
+        }
+    );
+
+    $stateProvider.state(
+        'test.message',
+        {
+            url: '/message',
+            templateUrl: 'views/message.html',
+            controller: 'MessageCtrl as vm'
+        }
+    );
+
+    $stateProvider.state(
+        'test.directive',
+        {
+            url: '/directive',
+            templateUrl: 'views/directive.html',
+        }
+    );
+
+    $stateProvider.state(
+        'test.login',
+        {
+            url: '/login',
+            templateUrl: 'views/login.html',
+            controller: 'LoginCtrl as vm'
+        }
+    );
+
+    $stateProvider.state(
+        'test.vm',
+        {
+            url: '/vm',
+            templateUrl: 'views/vm.html',
+            controller: 'VmCtrl as vm'
+        }
+    )
 });

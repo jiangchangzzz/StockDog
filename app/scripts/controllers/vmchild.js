@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name stockDogApp.controller:DashboardCtrl
+ * @name stockDogApp.controller:VmchildctrlCtrl
  * @description
- * # DashboardCtrl
+ * # VmchildctrlCtrl
  * Controller of the stockDogApp
  */
 angular.module('stockDogApp')
-  .controller('DashboardCtrl', function () {
+  .controller('VmchildctrlCtrl', function () {
     var vm=this;
   });

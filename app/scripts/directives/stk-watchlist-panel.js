@@ -36,11 +36,6 @@ angular.module('stockDogApp')
         $scope.deleteList=function(list){
           WatchlistService.remove(list);
         };
-
-        $scope.currentList=$stateParams.listId;
-        $scope.gotoList=function(id){
-          $state.go('watch.watchlist',{listId:id});
-        };
       }
     };
   });

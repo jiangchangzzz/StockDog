@@ -1,0 +1,10 @@
+<div ng-show="vm.user.isLogin">
+    <h1>{{vm.user.name}}</h1>
+    <button type="button" class="btn btn-default" ng-click="vm.user.logout()">Logout</button>
+</div>
+<div ng-show="!vm.user.isLogin">
+    <button type="button" class="btn btn-success" ng-click="vm.showLoginModal()">Login</button>
+</div>
+<div>
+    <input type="text" class="form-control" ng-model="red">
+</div>
